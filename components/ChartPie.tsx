@@ -75,21 +75,21 @@ const ChartPie = ({ cash, stock, point }: Props) => {
       </div>
       <div className="flex flex-col h-full px-6 text-lg">
         <LabelWrap>
-          <div className="flex text-base">
+          <div className="flex items-center text-base">
             <CircleIcon htmlColor={blue[400]} className="text-base" />
             <p className="ml-2">預金・現金</p>
           </div>
           <YenDetail total={total} item={cash} />
         </LabelWrap>
         <LabelWrap>
-          <div className="flex text-base">
+          <div className="flex items-center text-base">
             <CircleIcon htmlColor={red[400]} className="text-base" />
             <p className="ml-2">株式・投資信託</p>
           </div>
           <YenDetail total={total} item={stock} />
         </LabelWrap>
         <LabelWrap>
-          <div className="flex">
+          <div className="flex items-center text-base">
             <CircleIcon htmlColor={yellow[400]} className="text-base" />
             <p className="ml-2">ポイント</p>
           </div>

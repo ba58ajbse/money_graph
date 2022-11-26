@@ -1,7 +1,13 @@
 'use client'
 
+import ChartPie from '../components/ChartPie'
+
 const Page = () => {
-  const totalAmount = 1234567
+  const cash = 987653
+  const stock = 246914
+  const point = 0
+  const totalAmount = cash + stock
+
   return (
     <main className="flex flex-col h-full w-screen">
       {/* 総額 */}
@@ -17,7 +23,7 @@ const Page = () => {
         </div>
       </div>
       {/* グラフ */}
-      <div>比率</div>
+      <ChartPie cash={cash} stock={stock} point={point} />
     </main>
   )
 }

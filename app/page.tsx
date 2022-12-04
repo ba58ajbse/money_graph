@@ -1,23 +1,12 @@
 'use client'
 
-import { signIn, useSession } from 'next-auth/react'
 import ChartPie from '../components/ChartPie'
 
 const Page = () => {
-  const { data: session } = useSession()
   const cash = 987653
   const stock = 246914
   const point = 0
   const totalAmount = cash + stock
-
-  if (!session || !session.user) {
-    return (
-      <>
-        Not signed in
-        <button onClick={() => signIn()}>Log in</button>
-      </>
-    )
-  }
 
   return (
     <main className="flex flex-col h-full w-screen">

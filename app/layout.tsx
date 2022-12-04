@@ -2,9 +2,8 @@
 
 import { ReactNode } from 'react'
 import { SessionProvider } from 'next-auth/react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
 import '../styles/globals.css'
+import AuthLayout from './layouts/AuthLayout'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -12,9 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <SessionProvider>
           <div className="min-h-screen bg-gray-800 text-gray-400 text-sm font-mono">
-            <Header />
-            {children}
-            <Footer />
+            <AuthLayout>{children}</AuthLayout>
           </div>
         </SessionProvider>
       </body>

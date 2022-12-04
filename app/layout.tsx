@@ -1,17 +1,19 @@
+'use client'
+
 import { ReactNode } from 'react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import { SessionProvider } from 'next-auth/react'
 import '../styles/globals.css'
+import AuthLayout from './layouts/AuthLayout'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <div className="min-h-screen bg-gray-800 text-gray-400 text-sm font-mono">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <SessionProvider>
+          <div className="min-h-screen bg-gray-800 text-gray-400 text-sm font-mono">
+            <AuthLayout>{children}</AuthLayout>
+          </div>
+        </SessionProvider>
       </body>
     </html>
   )

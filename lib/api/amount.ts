@@ -73,7 +73,9 @@ export const fetchSecAmount = async (): Promise<FetchAmountType[]> => {
 export const fetchAmount = async (): Promise<FetchAmountReturnType> => {
   const res: FetchAmountApiReturnType = await axios('/api/amount')
     .then((res) => res.data.data)
-    .catch((err) => console.log(err))
+    .catch((err) => {
+      throw new Error('fetchAmount error.')
+    })
 
   const cash = res.bank.reduce((prev, obj) => prev + Object.values(obj)[0], 0)
 

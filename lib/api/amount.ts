@@ -1,5 +1,5 @@
 import { GetCommand } from '@aws-sdk/lib-dynamodb'
-import axios from 'axios'
+import { axios } from '../axios'
 import { dynamoClient } from '../dynamo'
 
 export type FetchAmountType = {
@@ -71,9 +71,13 @@ export const fetchSecAmount = async (): Promise<FetchAmountType[]> => {
 }
 
 export const fetchAmount = async (): Promise<FetchAmountReturnType> => {
+  console.log(axios)
+
   const res: FetchAmountApiReturnType = await axios('/api/amount')
     .then((res) => res.data.data)
     .catch((err) => {
+      console.error(err)
+
       throw new Error('fetchAmount error.')
     })
 

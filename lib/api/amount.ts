@@ -41,7 +41,6 @@ export const fetchBankAmount = async (): Promise<FetchAmountType[]> => {
     .map((key) => {
       return { [key]: items[key] }
     })
-  console.log('bank: ', data)
 
   return data
 }
@@ -68,7 +67,6 @@ export const fetchSecAmount = async (): Promise<FetchAmountType[]> => {
       return { [key]: items[key] }
     })
 
-  console.log('sec: ', data)
   return data
 }
 

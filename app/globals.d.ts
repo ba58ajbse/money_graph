@@ -3,6 +3,7 @@ declare namespace NodeJS {
     readonly COGNITO_CLIENT_ID: string
     readonly COGNITO_CLIENT_SECRET: string
     readonly COGNITO_ISSURE: string
+    readonly DYNAMO_REGION: string
     readonly DYNAMO_ACCESS_KEY_ID: string
     readonly DYNAMO_SECRET_ACCESS_KEY: string
     readonly APP_URL: string

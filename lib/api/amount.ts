@@ -41,6 +41,7 @@ export const fetchBankAmount = async (): Promise<FetchAmountType[]> => {
     .map((key) => {
       return { [key]: items[key] }
     })
+  console.log('bank: ', data)
 
   return data
 }
@@ -67,12 +68,11 @@ export const fetchSecAmount = async (): Promise<FetchAmountType[]> => {
       return { [key]: items[key] }
     })
 
+  console.log('sec: ', data)
   return data
 }
 
 export const fetchAmount = async (): Promise<FetchAmountReturnType> => {
-  console.log(axios)
-
   const res: FetchAmountApiReturnType = await axios('/api/amount')
     .then((res) => res.data.data)
     .catch((err) => {

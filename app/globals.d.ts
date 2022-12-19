@@ -6,6 +6,7 @@ declare namespace NodeJS {
     readonly DYNAMO_REGION: string
     readonly DYNAMO_ACCESS_KEY_ID: string
     readonly DYNAMO_SECRET_ACCESS_KEY: string
+    readonly DYNAMO_ENDPOINT: string
     readonly APP_URL: string
   }
 }

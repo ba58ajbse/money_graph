@@ -29,7 +29,7 @@ export const fetchBankAmount = async (): Promise<FetchAmountType[]> => {
     KeyConditionExpression: 'amount = :a',
     ExpressionAttributeValues: { ':a': 'bank' },
     Limit: 1,
-    ScanIndexForward: true,
+    ScanIndexForward: false,
   })
 
   const items = await dynamoClient
@@ -60,7 +60,7 @@ export const fetchSecAmount = async (): Promise<FetchAmountType[]> => {
     KeyConditionExpression: 'amount = :a',
     ExpressionAttributeValues: { ':a': 'sec' },
     Limit: 1,
-    ScanIndexForward: true,
+    ScanIndexForward: false,
   })
 
   const items = await dynamoClient
